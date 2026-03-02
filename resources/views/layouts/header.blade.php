@@ -48,12 +48,13 @@
                                     <li><a href="#">Projects</a>
                                         <ul>
                                             <li><a href="projects">All Projects</a></li>
-                                            <li><a href="project-wide-4-cols">Single-Family Homes</a></li>
-                                            <li><a href="project-wide-4-cols">Multi-Family & Commercial</a></li>
+                                            <li><a href="single-family">Single-Family Homes</a></li>
+                                            <li><a href="multifamily-commercial">Multi-Family & Commercial</a></li>
 
                                         </ul>
                                     </li>
-                                    <li><a href="services">Services</a></li>
+                                    <li><a href="certificate"><i class="fa-solid
+                                    fa-certificate"> Certificates</i></a></li>
                                     <li><a href="blog">Blog</a></li>
                                     <li><a href="contact">Contact</a></li>
                                 </ul>

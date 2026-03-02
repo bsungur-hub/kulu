@@ -12399,6 +12399,16 @@ ul#slide-list{
     background-position: center 30% !important;
 }
 
+.subheader-singlefamily {
+    background-image: url('../images/background/kulu-singlefamilypage1.jpg') !important;
+    background-position: center 65% !important;
+}
+
+.subheader-certification {
+    background-image: url('../images/background/kulu-cert-back.png') !important;
+    background-position: center 25% !important;
+}
+
 .project-img {
     width: 100% !important;
     height: 350px !important;

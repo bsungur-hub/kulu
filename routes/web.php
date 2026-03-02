@@ -23,5 +23,18 @@ Route::get('/system-geneo', function () {
     return view('system.system-geneo');
 });
 
+Route::get('/single-family', function () {
+    return view('project.single-family');
+});
+
+Route::get('/multifamily-commercial', function () {
+    return view('project.multifamily-commercial');
+});
+
+Route::get('/certificate', function () {
+    return view('certificate');
+});
+
+
 
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
