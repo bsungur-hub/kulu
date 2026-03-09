@@ -36,7 +36,7 @@
 
                         @if(session('success'))
                             <div class="alert alert-success">
-                                {{ session('success') }}
+                                <i class="fa-solid fa-check"></i> {{ session('success') }}
                             </div>
 
                                 <div class="col-md-12 text-center">
@@ -45,7 +45,7 @@
 
                             @else
 
-                        <form name="contactForm" id='contact_form' method="POST" action="{{ route('quote.store') }}">
+                        <form name="contactForm" id='contact_form' method="POST" action="{{ route('quote.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div id="step-1" class="row">
                                 <div class="col-md-12 mb30">
@@ -80,30 +80,12 @@
                                 </div>
 
                                 <div class="col-md-6 mb10">
-                                    <h4><i class="fa fa-arrows-alt id-color"></i>Total area size you want to renovate</h4>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input type='text' name='area_size' id='area_size' class="form-control" placeholder="Area Size" required>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <select name="unit_size" id="unit_size" value="" class="form-control">
-                                                <option value="sqft">Square Feet(sqft)</option>
-                                                <option value="m">meter(m)</option>
-                                                <option value="ft">Feet(ft)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mb10">
-                                    <h4><i class="fa fa-tag id-color"></i>Select a renovation budget</h4>
+                                    <h4><i class="fa fa-tag id-color"></i>Is Your Project</h4>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <select name="budget" id="budget" value="" class="form-control">
-                                                <option value="Budget Friendly">Budget Friendly</option>
-                                                <option value="Mid Range">Mid Range</option>
-                                                <option value="High End">High End</option>
+                                                <option value="New Construction">New Construction</option>
+                                                <option value="Renovation">Renovation/Retrofit</option>
                                             </select>
                                         </div>
                                     </div>
@@ -118,12 +100,12 @@
                                 <div class="col-md-6">
                                     <div id='name_error' class='error'>Please enter your name.</div>
                                     <div>
-                                        <input type='text' name='name' id='name' class="form-control" placeholder="Your Name" required>
+                                        <input type='text' name='name' id='name' class="form-control" placeholder="Your Name*" required>
                                     </div>
 
                                     <div id='email_error' class='error'>Please enter your valid E-mail ID.</div>
                                     <div>
-                                        <input type='email' name='email' id='email' class="form-control" placeholder="Your Email" required>
+                                        <input type='email' name='email' id='email' class="form-control" placeholder="Your Email*" required>
                                     </div>
 
                                     <div id='phone_error' class='error'>Please enter your phone number.</div>
@@ -134,12 +116,23 @@
                                 <div class="col-md-6">
                                     <div id='message_error' class='error'>Please enter your message.</div>
                                     <div>
-                                        <textarea name='message' id='message' class="form-control" placeholder="Your Message"></textarea>
+                                        <textarea name='message' id='message' class="form-control" placeholder="Your Message*"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <div class="g-recaptcha" data-sitekey="copy-your-site-key-here"></div>
+
+                                    <div style="margin-bottom: 20px;">
+                                        <label for="attachments" style="font-weight: bold; margin-bottom: 10px; display: block;">Upload Project Files (Images, PDF, Word, Excel etc.)</label>
+
+                                        <input type="file" name="attachments[]" id="attachments" class="form-control" data-bs-theme="dark" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.dwg,.dxf" style="padding-bottom: 40px;">
+
+                                        <div id="file-names-list" style="margin-top: 10px; font-size: 14px; color: #bbb;"></div>
+
+                                        <small style="color: #666;">Max total size: 10MB. Allowed types: Images, PDF, Office Files, DWG/DXF.</small>
+                                    </div>
+
+                                    <div class="g-recaptcha" data-sitekey="6Le_3IMsAAAAAGvYXT2Ybe1ymeYnepbKUyM4xhr3" data-action="LOGIN"></div>
                                     <p id='submit' class="mt20">
                                         <input type='submit' id='send_message' value='Submit Form' class="btn btn-line">
                                     </p>
@@ -161,10 +154,27 @@
             </div>
         </div>
 
-        <!-- Javascript Files
-           ================================================== -->
-        <script src='https://www.google.com/recaptcha/api.js' async defer></script>
-        {{--<script src="form.js"></script>--}}
+    <script>
+        document.getElementById('attachments').addEventListener('change', function(e) {
+            var fileListContainer = document.getElementById('file-names-list');
+            fileListContainer.innerHTML = ''; // Önceki listeyi temizle
+
+            var files = e.target.files;
+
+            // Eğer dosya seçildiyse HTML listesi oluştur
+            if(files.length > 0) {
+                var listHtml = '<ul style="list-style-type: none; padding-left: 0;">';
+                for(var i = 0; i < files.length; i++) {
+                    // Her dosyanın isminin yanına şık bir ikon veya işaret koyuyoruz
+                    listHtml += '<li style="margin-bottom: 5px;"><span style="color: #50C878;">&#10003;</span> ' + files[i].name + '</li>';
+                }
+                listHtml += '</ul>';
+
+                // Oluşturduğumuz listeyi ekrana bas
+                fileListContainer.innerHTML = listHtml;
+            }
+        });
+    </script>
 
 
 </x-app>

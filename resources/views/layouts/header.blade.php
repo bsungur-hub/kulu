@@ -38,11 +38,14 @@
                         <div class="md-flex-col">
                             <nav class="md-flex">
                                 <ul id="mainmenu">
-                                    <li><a href="/">Home<span></span></a></li>
+                                    <li><a href="/">HOME<span></span></a></li>
+                                    <li><a href="aboutus">About Us<span></span></a></li>
                                     <li><a href="#">Systems</a>
                                         <ul>
                                             <li><a href="4500-system">4500 System</a></li>
                                             <li><a href="system-geneo">System GENEO</a></li>
+                                            <li><a href="advance">Advance 81 Series</a></li>
+                                            <li><a href="hyperline">Inova | Hyperline Series</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Projects</a>
@@ -54,7 +57,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="certificate"><i class="fa-solid
-                                    fa-certificate"> Certificates</i></a></li>
+                                    fa-certificate fa-sm"> Certificates</i></a></li>
                                     <li><a href="blog">Blog</a></li>
                                     <li><a href="contact">Contact</a></li>
                                 </ul>

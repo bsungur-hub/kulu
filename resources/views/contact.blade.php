@@ -26,7 +26,7 @@
                 @if(session('success'))
 
                     <div class="col-md-12 alert alert-success">
-                        {{ session('success') }}
+                        <i class="fa-solid fa-check"></i> {{ session('success') }}
                     </div>
 
                     <div class="col-md-12 text-center">
@@ -47,7 +47,7 @@
                         </div>
                     @endif
 
-                    <form name="contactForm" id='contact_form' method="POST" action="{{ route('contact.store') }}">
+                    <form name="contactForm" id='contact_form' method="POST" action="{{ route('contact.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row">
@@ -82,7 +82,16 @@
                             </div>
 
                             <div class="col-md-12">
-                                <div class="g-recaptcha" data-sitekey="copy-your-site-key-here"></div>
+                                <div style="margin-bottom: 20px;">
+                                    <label for="attachments" style="font-weight: bold; margin-bottom: 10px; display: block;">Upload Project Files (Images, PDF, Word, Excel etc.)</label>
+
+                                    <input type="file" name="attachments[]" id="attachments" class="form-control" data-bs-theme="dark" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.dwg,.dxf" style="padding-bottom: 40px;">
+
+                                    <div id="file-names-list" style="margin-top: 10px; font-size: 14px; color: #bbb;"></div>
+
+                                    <small style="color: #666;">Max total size: 10MB. Allowed types: Images, PDF, Office Files, DWG/DXF.</small>
+                                </div>
+                                <div class="g-recaptcha" data-sitekey="6Le_3IMsAAAAAGvYXT2Ybe1ymeYnepbKUyM4xhr3" data-action="LOGIN"></div>
                                 <p id='submit' class="mt20">
                                     <input type='submit' id='' value='Submit Form' class="btn btn-line">
                                 </p>
@@ -97,12 +106,12 @@
                     <div class="widget widget_text">
                         <h3>Contact Info</h3>
                         <address>
-                            <span><strong>Address:</strong>4911 77 Ave SE, Calgary, AB T2C 2X4</span>
-                            <span><strong>Phone:</strong>+1 (403) 475-7575</span>
-                            <span><strong>Email:</strong><a
-                                    href="mailto:adem@kuluwindows.com">adem@kuluwindows.com</a></span>
-                            <span><strong>Open</strong>Monday - Friday 08am - 5pm</span>
-                            <span><strong>Ins:</strong><a href="https://www.instagram.com/kuluwindows/">@kuluwindows</a></span>
+                            <span><strong><i class="fa-solid fa-location"></i></strong><a href="https://maps.app.goo.gl/PmffQ1DJ3BrDM8ma8">4911 77 Ave SE, Calgary, AB T2C 2X4</a></span>
+                            <span><strong><i class="fa-solid fa-phone"></i></strong><a href="tel:+14034757575">+1 (403) 475-7575</a></span>
+                            <span><strong><i class="fa-solid fa-envelope"></i></strong><a
+                                    href="mailto:adem@kuluwindows.com">info@kuluwindows.com</a></span>
+                            <span><strong><i class="fa-solid fa-clock"></i></strong>Monday - Friday 08am - 5pm</span>
+                            <span><strong><i class="fa-brands fa-instagram"></i></strong><a href="https://www.instagram.com/kuluwindows/">@kuluwindows</a></span>
                         </address>
                     </div>
 
@@ -130,4 +139,26 @@
 
 
     </div>
+
+    <script>
+        document.getElementById('attachments').addEventListener('change', function(e) {
+            var fileListContainer = document.getElementById('file-names-list');
+            fileListContainer.innerHTML = ''; // Önceki listeyi temizle
+
+            var files = e.target.files;
+
+            // Eğer dosya seçildiyse HTML listesi oluştur
+            if(files.length > 0) {
+                var listHtml = '<ul style="list-style-type: none; padding-left: 0;">';
+                for(var i = 0; i < files.length; i++) {
+                    // Her dosyanın isminin yanına şık bir ikon veya işaret koyuyoruz
+                    listHtml += '<li style="margin-bottom: 5px;"><span style="color: #50C878;">&#10003;</span> ' + files[i].name + '</li>';
+                }
+                listHtml += '</ul>';
+
+                // Oluşturduğumuz listeyi ekrana bas
+                fileListContainer.innerHTML = listHtml;
+            }
+        });
+    </script>
 </x-app>

@@ -46,6 +46,8 @@
     <!-- revolution slider -->
     <link rel="stylesheet" href="{{asset('assets/rs-plugin/css/settings.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('assets/css/rev-settings.css')}}" type="text/css">
+
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 </head>
 
 <body>

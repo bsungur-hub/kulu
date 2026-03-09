@@ -12409,12 +12409,86 @@ ul#slide-list{
     background-position: center 25% !important;
 }
 
+/* Advance Series Sayfası Üst Banner Ayarı */
+.subheader-advance {
+    background-image: url('../images/background/advance_series.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    min-height: 700px !important;
+}
 .project-img {
     width: 100% !important;
     height: 350px !important;
     object-fit: cover;
     display: block;
 }
+
+/* Hyperline Series Sayfası Üst Banner Ayarı */
+.subheader-hyperline {
+    background-image: url('../images/background/hyperline_banner.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    min-height: 700px !important;
+}
+
+/* Video düzeltmeleri */
+.video-wrapper {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.video-wrapper:hover .video-play-btn {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(40,167,69,0.6);
+}
+.video-play-btn:hover { transform: scale(1.05); }
+.video-play-btn:active { transform: scale(0.95); }
+
+.video-bg { transition: transform 0.3s ease; }
+.video-wrapper:hover .video-bg {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-wrapper { max-width: 100% !important; }
+    .video-play-btn { width: 70px !important; height: 70px !important; font-size: 22px !important; }
+}
+@media (max-width: 576px) {
+    #video-section h3 { font-size: 1.75rem; }
+}
+
+/* Modal iframe autoplay engelle */
+#videoModal iframe {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+#videoModal.show iframe {
+    opacity: 1;
+}
+
+#videoModal .modal-header {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.95);
+}
+
+#videoModal .btn-close:hover {
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+}
+
+/* Modal kapanırken video fade out */
+#videoModal .modal-body iframe {
+    transition: opacity 0.3s ease;
+}
+
+#videoModal:not(.show) .modal-body iframe {
+    opacity: 0;
+}
+
+
 
 
 

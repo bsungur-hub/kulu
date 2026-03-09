@@ -13,7 +13,7 @@
                         <div class="tp-caption big-white sfb" data-x="0" data-y="160" data-speed="800" data-start="400"
                              data-easing="easeInOutExpo"
                              data-endspeed="450">
-                            <span class="id-color">Lastest Project</span>
+                            <h4 class="id-color">Lastest Project</h4>
                         </div>
 
                         <div class="tp-caption ultra-big-white sfb" data-x="0" data-y="center" data-speed="800"
@@ -24,12 +24,12 @@
 
                         <div class="tp-caption big-white sfb " data-x="0" data-y="310" data-speed="800" data-start="600"
                              data-easing="easeInOutExpo" data-endspeed="450">
-                            Forget everything you thought you knew about windows.
+                            <h4>Forget everything you thought you knew about windows.</h4>
                         </div>
 
                         <div class="tp-caption sfb" data-x="0" data-y="385" data-speed="800" data-start="700"
                              data-easing="easeInOutExpo">
-                            <a href="#" class="btn-slider">View Project
+                            <a href="projects" class="btn-slider">View Project
                             </a>
                         </div>
                     </li>
@@ -40,7 +40,7 @@
                         <div class="tp-caption big-white sfb" data-x="right" data-y="160" data-speed="800"
                              data-start="400" data-easing="easeInOutExpo"
                              data-endspeed="450">
-                            <span class="id-color">Latest Project</span>
+                            <h4 class="id-color">Latest Project</h4>
                         </div>
 
                         <div class="tp-caption ultra-big-white sfb" data-x="right" data-y="center" data-speed="800"
@@ -52,12 +52,12 @@
                         <div class="tp-caption big-white text-right sfb" data-x="right" data-y="310" data-speed="800"
                              data-start="600" data-easing="easeInOutExpo"
                              data-endspeed="450">
-                            we're not just selling a product, we're selling a system
+                            <h4>we're not just selling a product, we're selling a system</h4>
                         </div>
 
                         <div class="tp-caption sfb" data-x="right" data-y="385" data-speed="800" data-start="700"
                              data-easing="easeInOutExpo">
-                            <a href="#" class="btn-slider">View Project
+                            <a href="projects" class="btn-slider">View Project
                             </a>
                         </div>
                     </li>
@@ -75,7 +75,7 @@
                         <h3 class="style-1"><span class="id-color">Our Prescision</span></h3>
                         <h2 class="style-5">It’s not just a window. It’s an engineered shield against the Alberta
                             climate.</h2>
-                        <p class="lead">High-performance systems built with REHAU 4500 technology. Our products are NFRC
+                        <p class="lead">High-performance systems built with Advance 81 Series technology. Our products are NFRC
                             certified and rigorously tested to deliver industry-leading thermal insulation and
                             structural integrity for your home.</p>
                         <div class="spacer-single"></div>
@@ -89,7 +89,7 @@
                         </a>
                         <div class="spacer-single"></div>
                         <h3 class="style-1">Residential Excellence</h3>
-                        Experience the European standard of comfort. Featuring the REHAU 4500 DATT system, our tilt &
+                        Experience the European standard of comfort. Featuring the REHAU 4500 DATT system and Advance 81 Series, our tilt &
                         turn windows offer superior air tightness and versatile ventilation, keeping your home quiet and
                         energy-efficient year-round.
                     </div>
@@ -102,7 +102,7 @@
                         </a>
                         <div class="spacer-single"></div>
                         <h3 class="style-1">High-Performance Fixed</h3>
-                        Engineered for Calgary’s extreme temperature swings. With NFRC-certified low $U$-factors, our
+                        Engineered for Calgary’s extreme temperature swings. With NFRC-certified low U-factors, our
                         fixed window systems maximize your view without compromising on thermal performance or
                         structural strength.
                     </div>
@@ -341,7 +341,7 @@
                             <span class="icon" style="color: #dc2626;"><i class="fa-regular fa-snowflake"></i></span>
                             <div class="text">
                                 <h3 class="style-1">Climate friendly lifecycle</h3>
-                                <p>SSuperior energy efficiency extends your home's longevity.They offer a more
+                                <p>Superior energy efficiency extends your home's longevity.They offer a more
                                     climate-friendly alternative to wood.Our manufacturing process utilizes recyclable
                                     materials.
                                     This sustainable approach reduces our carbon footprint by 80%.</p>
@@ -413,9 +413,49 @@
                                     Our dedicated support team is available around the clock to address any inquiries or
                                     sudden emergencies. Whether you face an unexpected Alberta winter storm or simply
                                     need routine maintenance advice, we are always ready to help. Experience true peace
-                                    of mind knowing that KULU stands firmly behind every premium product we install.</p>
+                                    of mind knowing that KULU stands firmly behind every premium product we/you install
+                                    .</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-12">
+                        <h2>Payment Plans and Terms</h2>
+                        <div class="box-icon">
+
+                            <div class="table-responsive" style="margin-top: 20px; margin-bottom: 20px;">
+                                <table class="table table-dark table-striped table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" style="color: #dc2626;">Plan / Option</th>
+                                        <th scope="col" style="color: #dc2626;">Term (Months)</th>
+                                        <th scope="col" style="color: #dc2626;">Interest Rate</th>
+                                        <th scope="col" style="color: #dc2626;">Details</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="font-weight: bold;">Standard Plan</td>
+                                        <td>Up to 24 Months</td>
+                                        <td>0%</td>
+                                        <td>General zero interest payment plan.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">$20,000 - $40,000</td>
+                                        <td>12 Months</td>
+                                        <td>0%</td>
+                                        <td>12-month zero interest option for projects in this budget range.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">No Down Payment (No D.P.)</td>
+                                        <td>24 Months</td>
+                                        <td>0%</td>
+                                        <td>24-month zero interest plan with no upfront payment required.</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -432,7 +472,7 @@
                     </div>
 
                     <div class="col-md-4 text-right">
-                        <a href="contact.html" class="btn-custom">Get Quotation</a>
+                        <a href="quote" class="btn-custom">Get Quotation</a>
                     </div>
                 </div>
             </div>
@@ -440,7 +480,7 @@
         <!-- logo carousel section close -->
 
         <!-- section begin -->
-        <section id="section-steps-4" class="jarallax">
+      {{--  <section id="section-steps-4" class="jarallax">
             <img src="{{asset('assets/images/background/bg-32.jpg')}}" class="jarallax-img" alt="">
             <div class="container">
                 <div class="row">
@@ -525,7 +565,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>--}}
         <!-- section close -->
     </div>
 </x-app>

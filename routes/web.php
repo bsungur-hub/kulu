@@ -15,6 +15,8 @@ Route::post('/quote', [QuoteController::class, 'store'])->name('quote.store');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
+
+// System Menu
 Route::get('/4500-system', function () {
     return view('system.4500-system');
 });
@@ -22,6 +24,20 @@ Route::get('/4500-system', function () {
 Route::get('/system-geneo', function () {
     return view('system.system-geneo');
 });
+
+Route::get('/certificate', function () {
+    return view('certificate');
+});
+
+Route::get('/advance', function () {
+    return view('system.advance');
+});
+
+Route::get('/hyperline', function () {
+    return view('system.hyperline');
+});
+
+// End System Menu
 
 Route::get('/single-family', function () {
     return view('project.single-family');
@@ -34,6 +50,12 @@ Route::get('/multifamily-commercial', function () {
 Route::get('/certificate', function () {
     return view('certificate');
 });
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
+
+
 
 
 

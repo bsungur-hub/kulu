@@ -31,8 +31,6 @@
                             <li><a href="#" data-filter="*" class="selected">All Projects</a></li>
                             <li><a href="#" data-filter=".residential">Residential</a></li>
                             <li><a href="#" data-filter=".commercial">Commercial</a></li>
-                            <li><a href="#" data-filter=".hospitaly">Hospitaly</a></li>
-                            <li><a href="#" data-filter=".office">Office</a></li>
                         </ul>
 
                     </div>

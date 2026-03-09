@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Mail\QuoteReceived;
+use App\Models\Contact;
 use App\Models\Quote;
+use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 class QuoteController extends Controller
@@ -18,26 +21,63 @@ class QuoteController extends Controller
     {
 
         // gelen verileri doğrulama
-        $validatedData = $request->validate([
+        $validationData = $request->validate([
             'property_type' => 'required|string|max:255',
-            'area_size' => 'required|string|max:255',
-            'unit_size' => 'required|string|max:255',
+            //'area_size' => 'required|string|max:255',
+            //'unit_size' => 'required|string|max:255',
             'budget' => 'required|string|max:255',
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|string',
+
+            // Çoklu dosya dizisini doğruluyoruz (maksimum 5 dosya)
+            'attachments' => 'nullable|array|max:5',
+
+            // Dizinin içindeki HER BİR dosyanın kuralı (mimes ile izin verilen uzantılar, max ile boyut sınırı - 10MB = 10240 KB)
+            'attachments.*' => 'file|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx,dwg,dxf|max:10240',
+
+
+            // reCAPTCHA Doğrulama Kuralı
+            'g-recaptcha-response' => [
+                'required',
+                function (string $attribute, mixed $value, Closure $fail) {
+                    // Google'ın sunucusuna elimizdeki secret key ve kullanıcının cevabını yolluyoruz
+                    $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+                        'secret' => env('RECAPTCHA_SECRET_KEY'),
+                        'response' => $value,
+                    ]);
+
+                    // Eğer Google "success" (başarılı) demezse, hata fırlatıyoruz
+                    if (! $response->json('success')) {
+                        $fail('Google reCAPTCHA verification failed. Please try again.');
+                    }
+                },
+            ],
+        ], [
+            // Kullanıcı kutucuğu hiç işaretlemezse verilecek özel mesaj
+            'g-recaptcha-response.required' => 'Please verify that you are not a robot.',
         ]);
 
+        // 1. Google'ın g-recaptcha verisini DB'ye kaydetmemek için diziden çıkarıyoruz
+        unset($validationData['g-recaptcha-response']);
+
         // 2. Db' ye kaydetme
-        $quota = Quote::create($validatedData);
+        $quota = Quote::create($validationData);
 
-        // 3. Müşteriye email gönderme
-        //Mail::to($validatedData['email'])->send(new QuoteReceived($validatedData));
+        // 3. Dosyaları Yakalama
+        $files = [];
+        if ($request->hasFile('attachments')) {
+            $files = $request->file('attachments');
+        }
 
-        // 4. Admin' e bir eposta gönderme
-        //Mail::to('sungur99@gmail.com')->send(new QuoteReceived($validatedData));
 
-        // 5. Başarılı mesajıyla sayfaya geri dön
+        // 4. Müşteriye email gönderme
+        Mail::to($validationData['email'])->send(new QuoteReceived($validationData, [], false));
+
+        // 6. Admin' e bir eposta gönderme
+        Mail::to('info@kuluwindows.com')->send(new QuoteReceived($validationData, $files, true));
+
+        // 7. Başarılı mesajıyla sayfaya geri dön
         return redirect()->route('quote')->with('success', 'Quote sent successfully! Our technical team will evaluate your request and get back to you as soon as possible. Thank you for choosing us.');
 
 
