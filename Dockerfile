@@ -1,22 +1,35 @@
-FROM php:8.2-apache
+# Base image: PHP 8.3 + Apache
+FROM php:8.3-apache
 
-RUN apt-get update && apt-get install -y \
+# Sistem bağımlılıkları ve PHP extension'ları
+RUN apt-get update \
+ && apt-get install -y \
     git \
     unzip \
-    libzip-dev
+    libzip-dev \
+    libicu-dev \
+    sqlite3 \
+ && docker-php-ext-install zip pdo pdo_mysql pdo_sqlite intl \
+ && a2enmod rewrite \
+ && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install zip pdo pdo_mysql
-
+# Composer kurulumu
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Çalışma dizini
 WORKDIR /var/www/html
 
+# Proje dosyalarını kopyala
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
-
+# Laravel bağımlılıkları
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-req=ext-intl
+# Laravel key generate
 RUN php artisan key:generate || true
 
-RUN chown -R www-data:www-data /var/www/html
+# Dosya izinleri (özellikle SQLite için)
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 /var/www/html/database
 
+# Apache port
 EXPOSE 80
