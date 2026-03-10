@@ -1,42 +1,31 @@
 FROM php:8.3-fpm
 
-# Sistem bağımlılıklarını güncelle ve gerekli kütüphaneleri yükle
-# Filament için libicu-dev (intl) ve libzip-dev (zip) ekledik
+# Sistem bağımlılıkları + Node.js kurulumu
 RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip \
-    nginx \
-    sqlite3 \
-    libsqlite3-dev \
-    libicu-dev \
-    libzip-dev
+    git curl libpng-dev libonig-dev libxml2-dev zip unzip nginx sqlite3 libsqlite3-dev libicu-dev libzip-dev \
+    && curl -sL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs
 
-# PHP eklentilerini kur
-# intl ve zip eklentilerini buraya ekledik
+# PHP eklentileri
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd pdo_sqlite intl zip
 
-# Composer'ı kopyala
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Nginx konfigürasyonunu kopyala
-COPY nginx.conf /etc/nginx/sites-available/default
-
 WORKDIR /var/www
-
-# Proje dosyalarını kopyala
 COPY . .
 
-# Composer bağımlılıklarını yükle
+# PHP bağımlılıkları
 RUN composer install --no-dev --optimize-autoloader
 
-# Klasör izinleri
+# ÖNEMLİ: CSS ve JS dosyalarını derle (Vite Build)
+RUN npm install
+RUN npm run build
+
+# Nginx ayarı
+COPY nginx.conf /etc/nginx/sites-available/default
+
+# İzinler
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 EXPOSE 80
-
 CMD ["sh", "./deploy.sh"]

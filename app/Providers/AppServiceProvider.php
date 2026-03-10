@@ -25,5 +25,9 @@ class AppServiceProvider extends ServiceProvider
             $recentBlogs = Blog::latest()->take(5)->get();
             $view->with('recentBlogs', $recentBlogs);
         });
+
+        if (config('app.env') === 'production') {
+            \URL::forceScheme('https');
+        }
     }
 }
