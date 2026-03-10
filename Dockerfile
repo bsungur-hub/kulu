@@ -1,27 +1,39 @@
-FROM php:8.3-apache
+# 1. Aşama: PHP 8.3 ve Gerekli Sistem Paketleri
+FROM php:8.3-fpm
 
+# Gerekli araçları ve SQLite kütüphanelerini yükle
 RUN apt-get update && apt-get install -y \
     git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
     unzip \
-    libzip-dev \
-    libicu-dev \
+    nginx \
     sqlite3 \
-    g++ \
-    make \
-    autoconf \
- && docker-php-ext-install zip pdo pdo_mysql pdo_sqlite intl \
- && a2enmod rewrite \
- && rm -rf /var/lib/apt/lists/*
+    libsqlite3-dev
 
+# PHP eklentilerini kur (SQLite dahil)
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd pdo_sqlite
+
+# Composer'ı resmi imajdan kopyala
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-WORKDIR /var/www/html
+# Çalışma dizinini ayarla
+WORKDIR /var/www
+
+# Proje dosyalarını kopyala
 COPY . .
 
+# Composer bağımlılıklarını yükle (Production modu)
 RUN composer install --no-dev --optimize-autoloader
-RUN php artisan key:generate || true
 
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 /var/www/html/database
+# Klasör izinlerini ayarla (Laravel için kritik)
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
+# Portu aç
 EXPOSE 80
+
+# Başlangıç komutu (Birazdan oluşturacağımız deploy scripti)
+CMD ["sh", "./deploy.sh"]
