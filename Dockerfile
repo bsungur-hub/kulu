@@ -23,6 +23,9 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd pdo_sqlite in
 # Composer'ı kopyala
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Nginx konfigürasyonunu kopyala
+COPY nginx.conf /etc/nginx/sites-available/default
+
 WORKDIR /var/www
 
 # Proje dosyalarını kopyala
