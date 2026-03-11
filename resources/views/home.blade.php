@@ -174,149 +174,47 @@
         </section>
 
         <!-- section begin -->
-        <section id="section-portfolio-2" class="no-top no-bottom" data-bgcolor="#fff" aria-label="section-portfolio">
+        <section id="section-portfolio" class="no-top no-bottom" aria-label="section-portfolio">
+            <div class="container-fluid">
+                <div class="spacer-single"></div>
+                <!-- portfolio filter begin -->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">
+                            <li><a href="#" data-filter="*" class="selected">All Projects</a></li>
+                            <li><a href="#" data-filter=".residential">Residential</a></li>
+                            <li><a href="#" data-filter=".commercial">Commercial</a></li>
+                        </ul>
 
-            <div class="grid pt10" data-col="4" data-gridspace="10" data-ratio="466/700">
-                <div class="grid-sizer"></div>
-                <div class="grid-item residential">
-                    <!-- gallery item -->
-                    <div class="item">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-1.html">
-                                    <span class="overlay">
-                                        <span class="pf_title">
-                                            <span class="project-name">Eco Green Interior</span>
-                                        </span>
-                                    </span>
-                            </a>
-                            <img src="{{asset('assets/images/portfolio-new/pf%20(1).jpg')}}" alt=""/>
-                        </div>
                     </div>
-                    <!-- close gallery item -->
-                </div>
-                <div class="grid-item large-width hospitaly">
-                    <!-- gallery item -->
-                    <div class="item">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-2.html">
-                                    <span class="overlay">
-                                        <span class="pf_title">
-                                            <span class="project-name">Modern Elegance Suite</span>
-                                        </span>
-                                    </span>
-                            </a>
-
-                            <img src="{{asset('assets/images/portfolio-new/pf%20(2).jpg')}}" alt=""/>
-                        </div>
-                    </div>
-                    <!-- close gallery item -->
-                </div>
-                <div class="grid-item large-height hospitaly">
-                    <!-- gallery item -->
-                    <div class="item">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-3.html">
-                                    <span class="overlay">
-                                        <span class="pf_title">
-                                            <span class="project-name">Apartment Renovation</span>
-                                        </span>
-                                    </span>
-                            </a>
-
-                            <img src="{{asset('assets/images/portfolio-new/pf%20(3).jpg')}}" alt=""/>
-                        </div>
-                    </div>
-                    <!-- close gallery item -->
-                </div>
-                <div class="grid-item residential">
-                    <!-- gallery item -->
-                    <div class="item">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-youtube.html">
-                                    <span class="overlay">
-                                        <span class="pf_title">
-                                            <span class="project-name">Youtube Video</span>
-                                        </span>
-                                    </span>
-                            </a>
-                            <img src="{{asset('assets/images/portfolio-new/pf%20(4).jpg')}}" alt=""/>
-                        </div>
-                    </div>
-                    <!-- close gallery item -->
-                </div>
-                <div class="grid-item large-height office">
-                    <!-- gallery item -->
-                    <div class="item">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-vimeo.html">
-                                    <span class="overlay">
-                                        <span class="pf_title">
-                                            <span class="project-name">Vimeo Video</span>
-                                        </span>
-                                    </span>
-                            </a>
-                            <img src="{{asset('assets/images/portfolio-new/pf%20(5).jpg')}}" alt=""/>
-                        </div>
-                    </div>
-                    <!-- close gallery item -->
-                </div>
-                <div class="grid-item commercial">
-                    <!-- gallery item -->
-                    <div class="item">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details.html">
-                                    <span class="overlay">
-                                        <span class="pf_title">
-                                            <span class="project-name">Restaurant In Texas</span>
-                                        </span>
-                                    </span>
-                            </a>
-                            <img src="{{asset('assets/images/portfolio-new/pf%20(6).jpg')}}" alt=""/>
-                        </div>
-                    </div>
-                    <!-- close gallery item -->
                 </div>
 
-                <div class="grid-item large-width office">
-                    <!-- gallery item -->
-                    <div class="item office">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details.html">
-                                    <span class="overlay">
-                                        <span class="pf_title">
-                                            <span class="project-name">Office On Space</span>
-                                        </span>
+                <!-- portfolio filter close -->
+                <div id="gallery" class="row grid_gallery gallery de-gallery wow fadeInUp" data-wow-delay=".3s">
+
+                    @foreach ($Projects as $project)
+
+                        @foreach($project->images as $image)
+
+                            <div class="col-md-2 item {{ $project->name }}">
+                                <div class="picframe">
+                                    <a class="image-popup-gallery" href="{{ asset('storage/' . $image->image_path) }}">
+                                <span class="overlay">
+                                    <span class="pf_text">
+                                        <span class="project-name">{{ $project->description }}</span>
                                     </span>
-                            </a>
+                                </span>
+                                    </a>
+                                    <img src="{{ asset('storage/' . $image->image_path) }}" class="project-img
+                                    rounded mb-2" alt="" loading="lazy" />
+                                </div>
+                            </div>
 
-                            <img src="{{asset('assets/images/portfolio-new/pf%20(8).jpg')}}" alt=""/>
-                        </div>
-                    </div>
-                    <!-- close gallery item -->
+                        @endforeach
+
+                    @endforeach
+
                 </div>
-
-                <div class="grid-item residential">
-                    <!-- gallery item -->
-                    <div class="item residential">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top">
-                                    <span class="overlay">
-                                        <span class="pf_title">
-                                            <span class="project-name">Summer House</span>
-                                        </span>
-                                    </span>
-                            </a>
-
-                            <img src="{{asset('assets/images/portfolio-new/pf%20(7).jpg')}}" alt=""/>
-                        </div>
-                    </div>
-                    <!-- close gallery item -->
-                </div>
-
-            </div>
-
-            <div id="loader-area">
-                <div class="project-load"></div>
             </div>
         </section>
         <!-- section close -->
@@ -477,6 +375,8 @@
                 </div>
             </div>
         </section>
+
+
         <!-- logo carousel section close -->
 
         <!-- section begin -->

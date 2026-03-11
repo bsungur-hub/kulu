@@ -22,7 +22,7 @@
     <div id="content" class="no-top no-bottom">
         <!-- section begin -->
         <section id="section-portfolio" class="no-top no-bottom" aria-label="section-portfolio">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="spacer-single"></div>
                 <!-- portfolio filter begin -->
                 <div class="row">
@@ -43,7 +43,7 @@
 
                       @foreach($project->images as $image)
 
-                    <div class="col-md-4 item {{ $project->name }}">
+                    <div class="col-md-2 item {{ $project->name }}">
                         <div class="picframe">
                             <a class="image-popup-gallery" href="{{ asset('storage/' . $image->image_path) }}">
                                 <span class="overlay">
@@ -52,7 +52,8 @@
                                     </span>
                                 </span>
                             </a>
-                            <img src="{{ asset('storage/' . $image->image_path) }}" class="project-img rounded mb-2" alt="" />
+                            <img src="{{ asset('storage/' . $image->image_path) }}" class="project-img rounded mb-2"
+                                 alt="" loading="lazy" />
                         </div>
                     </div>
 
