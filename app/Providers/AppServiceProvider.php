@@ -24,10 +24,11 @@ class AppServiceProvider extends ServiceProvider
         View::composer('layouts.footer', function ($view) {
             $recentBlogs = Blog::latest()->take(5)->get();
             $view->with('recentBlogs', $recentBlogs);
+
+            if (app()->environment('production')) {
+                \URL::forceScheme('https');
+            }
         });
 
-        if (config('app.env') === 'production') {
-            \URL::forceScheme('https');
-        }
     }
 }
