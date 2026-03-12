@@ -316,45 +316,42 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <h2>Payment Plans and Terms</h2>
-                        <div class="box-icon">
 
-                            <div class="table-responsive" style="margin-top: 20px; margin-bottom: 20px;">
-                                <table class="table table-dark table-striped table-hover table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col" style="color: #dc2626;">Plan / Option</th>
-                                        <th scope="col" style="color: #dc2626;">Term (Months)</th>
-                                        <th scope="col" style="color: #dc2626;">Interest Rate</th>
-                                        <th scope="col" style="color: #dc2626;">Details</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td style="font-weight: bold;">Standard Plan</td>
-                                        <td>Up to 24 Months</td>
-                                        <td>0%</td>
-                                        <td>General zero interest payment plan.</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-weight: bold;">$20,000 - $40,000</td>
-                                        <td>12 Months</td>
-                                        <td>0%</td>
-                                        <td>12-month zero interest option for projects in this budget range.</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-weight: bold;">No Down Payment (No D.P.)</td>
-                                        <td>24 Months</td>
-                                        <td>0%</td>
-                                        <td>24-month zero interest plan with no upfront payment required.</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover table-striped table-bordered">
+                            <thead class="table-dark">
+                            <tr>
+                                <th><i class="fas fa-tag me-2"></i>Plan Name</th>
+                                <th><i class="fas fa-dollar-sign me-2"></i>Budget Range</th>
+                                <th><i class="fas fa-calendar me-2"></i>Term</th>
+                                <th><i class="fas fa-percent me-2"></i>Interest</th>
+                                <th><i class="fas fa-info-circle me-2"></i>Details</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="table-warning">
+                                <td><strong>Standard Plan</strong><br><span class="badge bg-warning text-dark">12-Month</span></td>
+                                <td>$20,000 - $40,000</td>
+                                <td>12 Months</td>
+                                <td><span class="badge bg-success">0%</span></td>
+                                <td>Down payment + deposit required</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Premium Plan</strong><br><span class="badge bg-info">24-Month</span></td>
+                                <td>$40,000+</td>
+                                <td>24 Months</td>
+                                <td><span class="badge bg-success">0%</span></td>
+                                <td>Down payment + deposit required</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="alert alert-danger mt-3" role="alert">
+                            <strong>⚠️ Important:</strong> Down payment & security deposit required for ALL plans. No "no upfront payment" option available.
                         </div>
-
                     </div>
+
+
                 </div>
             </div>
         </section>
