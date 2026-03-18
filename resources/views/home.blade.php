@@ -72,10 +72,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center">
-                        <h3 class="style-1"><span class="id-color">Our Prescision</span></h3>
+                        <h3 class="style-1"><span class="id-color">Our Precision</span></h3>
                         <h2 class="style-5">It’s not just a window. It’s an engineered shield against the Alberta
                             climate.</h2>
-                        <p class="lead">High-performance systems built with Advance 81 Series technology. Our products are NFRC
+                        <p class="lead">High-performance systems built with Advance 81 Series technology. Our
+                            products are NFRC & NAFS
                             certified and rigorously tested to deliver industry-leading thermal insulation and
                             structural integrity for your home.</p>
                         <div class="spacer-single"></div>
@@ -89,7 +90,8 @@
                         </a>
                         <div class="spacer-single"></div>
                         <h3 class="style-1">Residential Excellence</h3>
-                        Experience the European standard of comfort. Featuring the REHAU 4500 DATT system and Advance 81 Series, our tilt &
+                        Experience the European standard of comfort. Featuring the REHAU 4500 DATT system, Advance 81
+                        Series and Asas Pvc Systems  our tilt &
                         turn windows offer superior air tightness and versatile ventilation, keeping your home quiet and
                         energy-efficient year-round.
                     </div>
@@ -102,7 +104,8 @@
                         </a>
                         <div class="spacer-single"></div>
                         <h3 class="style-1">High-Performance Fixed</h3>
-                        Engineered for Calgary’s extreme temperature swings. With NFRC-certified low U-factors, our
+                        Engineered for Calgary’s extreme temperature swings. With NFRC & NAFS certified low
+                        U-factors, our
                         fixed window systems maximize your view without compromising on thermal performance or
                         structural strength.
                     </div>
@@ -115,8 +118,8 @@
                         </a>
                         <div class="spacer-single"></div>
                         <h3 class="style-1">Certified Quality</h3>
-                        Don't just take our word for it. Our products carry NCTL and NFRC certifications, meeting the
-                        highest Canadian standards for water penetration, air leakage, and energy star ratings.
+                        Don't just take our word for it. Our products carry NCTL, NFRC & NAFS certifications, meeting the
+                        highest Canadian standards for water penetration and air leakage.
                     </div>
 
                     <div class="spacer-single"></div>
@@ -266,8 +269,7 @@
                             <div class="text">
                                 <h3 class="style-1">Sustainable by Design</h3>
                                 <p>KULU windows and doors are a leading choice among advocates for green building
-                                    practices. Energy-efficient, environmentally friendly and meet LEED and Passive
-                                    House standards.</p>
+                                    practices.</p>
                             </div>
                         </div>
                     </div>
@@ -293,7 +295,7 @@
                             <span class="icon" style="color: #dc2626"><i class="fa-solid fa-shield-halved"></i></span>
                             <div class="text">
                                 <h3 class="style-1">Unmatched Comfort & Security</h3>
-                                <p>Experience decades of peaceful indoor comfort by completely blocking out sound,
+                                <p>Experience decades of peaceful indoor comfort by remarkable blocking out sound,
                                     drafts, and moisture. Our highly insulated structures keep you safe from extreme
                                     weather while significantly lowering energy costs. Enjoy strong, durable windows
                                     that easily resist severe storms and unwelcome intruders. Choose KULU for a

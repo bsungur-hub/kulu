@@ -43,7 +43,6 @@
                                     <li><a href="#">Systems</a>
                                         <ul>
                                             <li><a href="4500-system">4500 System</a></li>
-                                            <li><a href="system-geneo">System GENEO</a></li>
                                             <li><a href="advance">Advance 81 Series</a></li>
                                             <li><a href="hyperline">Inova | Hyperline Series</a></li>
                                         </ul>

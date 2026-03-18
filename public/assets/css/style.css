@@ -9606,8 +9606,8 @@ right:-15px;
 	padding:0;
 }
 .owl-theme .owl-dots .owl-dot span{
-	width:4px;
-	height:4px;
+	width:10px;
+	height:10px;
 }
 
 #photo-carousel .owl-dots{
@@ -12486,6 +12486,23 @@ ul#slide-list{
 
 #videoModal:not(.show) .modal-body iframe {
     opacity: 0;
+}
+
+
+/* Navigasyon noktalarını devasa yapar */
+.owl-theme .owl-dots .owl-dot span {
+    width: 20px !important;    /* Genişlik */
+    height: 20px !important;   /* Yükseklik */
+    margin: 10px 15px !important; /* Noktalar arası boşluk */
+    background: #ffffff !important; /* Rengi (isteğe bağlı) */
+    border-radius: 50% !important;  /* Tam yuvarlak kalması için */
+    transition: all .3s ease;
+}
+
+/* Aktif olan (seçili) noktanın rengini veya boyutunu vurgulamak isterseniz: */
+.owl-theme .owl-dots .owl-dot.active span {
+    background: #ff4200 !important; /* Aktif noktayı turuncu/kırmızı yapar */
+    transform: scale(1.2);          /* Aktif olanı biraz daha büyütür */
 }
 
 

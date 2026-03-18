@@ -5,7 +5,8 @@
             <div class="col-md-4">
 
                 <img src="{{asset('assets/images/logo/logo.svg')}}" class="logo-small" alt=""><br>Kulu Windows and Doors
-                brings European innovation to Alberta. Our NFRC-certified Advance series provides unmatched thermal
+                brings European innovation to Alberta. Our NFRC & NAFS certified Advance series provides unmatched
+                thermal
                 comfort, elegance, and durability. We engineer high-performance solutions designed to withstand extreme
                 weather and build a sustainable future for our community.
             </div>
