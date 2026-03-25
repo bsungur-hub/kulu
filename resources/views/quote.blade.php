@@ -100,23 +100,26 @@
                                 <div class="col-md-6">
                                     <div id='name_error' class='error'>Please enter your name.</div>
                                     <div>
-                                        <input type='text' name='name' id='name' class="form-control" placeholder="Your Name*" required>
+                                        <input type='text' name='name' id='name' class="form-control"
+                                               placeholder="Your Name*" value="{{ old('name') }}" required>
                                     </div>
 
                                     <div id='email_error' class='error'>Please enter your valid E-mail ID.</div>
                                     <div>
-                                        <input type='email' name='email' id='email' class="form-control" placeholder="Your Email*" required>
+                                        <input type='email' name='email' id='email' class="form-control"
+                                               placeholder="Your Email*" value="{{ old('email') }}" required>
                                     </div>
 
                                     <div id='phone_error' class='error'>Please enter your phone number.</div>
                                     <div>
-                                        <input type='text' name='phone' id='phone' class="form-control" placeholder="Your Phone" required>
+                                        <input type='text' name='phone' id='phone' class="form-control"
+                                               placeholder="Your Phone" value="{{ old('phone') }}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div id='message_error' class='error'>Please enter your message.</div>
                                     <div>
-                                        <textarea name='message' id='message' class="form-control" placeholder="Your Message*"></textarea>
+                                        <textarea name='message' id='message' class="form-control" placeholder="Your Message*">{{ old('message') }}"</textarea>
                                     </div>
                                 </div>
 
@@ -125,7 +128,8 @@
                                     <div style="margin-bottom: 20px;">
                                         <label for="attachments" style="font-weight: bold; margin-bottom: 10px; display: block;">Upload Project Files (Images, PDF, Word, Excel etc.)</label>
 
-                                        <input type="file" name="attachments[]" id="attachments" class="form-control" data-bs-theme="dark" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.dwg,.dxf" style="padding-bottom: 40px;">
+                                        <input type="file" name="attachments[]" id="attachments" class="form-control"
+                                               data-bs-theme="dark" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.dwg,.dxf" style="padding-bottom: 40px;">
 
                                         <div id="file-names-list" style="margin-top: 10px; font-size: 14px; color: #bbb;"></div>
 

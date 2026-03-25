@@ -5,15 +5,17 @@
     <meta charset="utf-8">
     <link rel="icon" href="{{asset('assets/images/icon.png')}}" type="image/gif" sizes="16x16">
 
-    <title>K U L U - High-Performance Windows & Doors Calgary | REHAU Certified | Calgary | Alberta</title>
+    <title>K U L U - High-Performance Windows & Doors Calgary | Advance 81 System | Calgary | Alberta</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Kulu Windows & Doors offers NFRC certified, energy-efficient REHAU 4500 series windows in Calgary, Alberta. Engineered for the Canadian climate. Get a free quote today!">
+          content="Kulu Windows & Doors offers NFRC & NAFS certified & Advance 81 System in
+          Calgary, Alberta. Engineered for the Canadian climate. Get a free quote today!">
 
     <meta name="keywords"
-          content="windows and doors Calgary, energy efficient windows Alberta, REHAU 4500 series Calgary, vinyl windows Calgary, tilt and turn windows Canada, NFRC certified windows, Kulu windows, window replacement Calgary | Calgary, Edmonton, Red Deer, Lethbridge, St. Albert, Airdrie, Medicine Hat, Grande Prairie, Lloydminster, Leduc, Spruce Grove, Fort Saskatchewan, Camrose, Wetaskiwin, Brooks, Canmore, Banff, Cold Lake">
+          content="windows and doors Calgary, energy efficient windows Alberta, Advance 81 System Calgary, vinyl
+          windows Calgary, tilt and turn windows Canada, NFRC & NAFS certified windows, Kulu windows, window replacement Calgary | Calgary, Edmonton, Red Deer, Lethbridge, St. Albert, Airdrie, Medicine Hat, Grande Prairie, Lloydminster, Leduc, Spruce Grove, Fort Saskatchewan, Camrose, Wetaskiwin, Brooks, Canmore, Banff, Cold Lake">
 
     <meta name="geo.region" content="CA-AB"/>
     <meta name="geo.placename" content="Calgary"/>
@@ -25,7 +27,7 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="Kulu Windows & Doors | High-Performance Solutions in Calgary">
     <meta property="og:description"
-          content="NFRC Certified & REHAU engineered windows designed for Alberta's extreme weather.">
+          content="NFRC & NAFS Certified - Advance 81 System windows designed for Alberta's extreme weather.">
     <meta property="og:image" content="{{ asset('assets/images/og-image.jpg') }}">
 
     <meta name="author" content="Kulu Windows & Doors">

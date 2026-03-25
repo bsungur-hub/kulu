@@ -365,7 +365,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2>Ready to upgrade your home with high-performance windows and doors? </h2>
+                        <h4>Ready to upgrade your home with high-performance windows and doors? </h4>
                     </div>
 
                     <div class="col-md-4 text-right">

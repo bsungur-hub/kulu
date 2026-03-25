@@ -29,6 +29,7 @@ class QuoteController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|string',
+            'phone' => 'nullable|string|max:30|min:10',
 
             // Çoklu dosya dizisini doğruluyoruz (maksimum 5 dosya)
             'attachments' => 'nullable|array|max:5',

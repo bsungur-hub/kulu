@@ -65,10 +65,10 @@ class ContactController extends Controller
         }
 
         //to send an mail to customer
-        Mail::to($validationData['email'])->send(new ContactReceived($validationData));
+        Mail::to($validationData['email'])->send(new ContactReceived($validationData, [], false));
 
         //to send an email to Admin
-        Mail::to('info@kuluwindows.com')->send(new ContactReceived($validationData, $files));
+        Mail::to('info@kuluwindows.com')->send(new ContactReceived($validationData, $files, true));
 
         return redirect()->route('contact')->with('success', 'Your message has been sent successfully! Our team will evaluate your request and get back to you as soon as possible');
     }
