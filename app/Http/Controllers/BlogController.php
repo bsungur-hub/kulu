@@ -12,4 +12,10 @@ class BlogController extends Controller
         $blogs = Blog::latest()->paginate(10);
         return view('blog', compact('blogs'));
     }
+
+    public function show($slug)
+    {
+        $blog_single = Blog::where('slug',$slug)->firstOrFail();
+        return view('blog-single', compact('blog_single'));
+    }
 }

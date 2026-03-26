@@ -45,8 +45,9 @@
                                     </div>
 
                                     <div class="post-text">
-                                        <h3><a href="{{$blog->slug}}">{{$blog->title}}t</a></h3>
-                                        <p>{{$blog->content}}</p>
+                                        <h1><a href="{{ route('blog.show' , $blog->slug) }}"> {{
+                                        $blog->title }}</a></h1>
+                                        <p>{{ $blog->excerpt }}</p>
                                     </div>
 
                                     <a href="{{$blog->url}}" class="btn-more">Read More</a>
@@ -128,19 +129,6 @@
                             <li><a href="#link">Energy Saving Doors</a></li>
                             <li><a href="#link">Spring Window Upgrades</a></li>
                         </ul>
-                    </div>
-
-                    <div class="widget widget-text">
-                        <h4>About Us</h4>
-                        <div class="small-border"></div>
-                        At KULU Windows and Doors, we engineer peace of mind for Calgary homeowners by combining
-                        European innovation with local reliability. Specializing in high-performance REHAU 4500 series
-                        technology, our windows and doors are precision-crafted to provide superior thermal comfort and
-                        aesthetic elegance that stands up to Alberta’s most extreme weather conditions.
-
-                        Every product we manufacture meets rigorous NFRC and NCTL certifications, ensuring maximum
-                        energy efficiency for both residential and commercial projects. We are committed to building a
-                        more sustainable future for our community one high-quality window at a time.
                     </div>
 
                 </div>

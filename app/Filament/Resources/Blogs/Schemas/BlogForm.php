@@ -7,6 +7,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\RichEditor;
 
 class BlogForm
 {
@@ -21,7 +22,23 @@ class BlogForm
                 FileUpload::make('image')
                     ->disk('public')
                     ->directory('blog-image'),
-                Textarea::make('content')
+                RichEditor::make('content')
+                    ->label('Makale Gövdesi')
+                    ->toolbarButtons([
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'h1',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'underline',
+                        'undo',
+                    ])
                     ->required()
                     ->columnSpanFull(),
                 TextInput::make('meta_description'),

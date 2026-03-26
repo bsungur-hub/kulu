@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Blog extends Model
 {
@@ -17,4 +18,9 @@ class Blog extends Model
         'reading_time',
         'is_published',
     ];
+
+    public function getExcerptAttribute() {
+
+        return Str::words(strip_tags($this->content), 80 , '...');
+    }
 }
