@@ -33,6 +33,10 @@
                         <a href="/" class="btn-custom">HOME</a>
                     </div>
 
+                    <div class="col-md-12 text-center">
+                        <a href="{{route('contact')}}" class="btn-custom">SEND ANOTHER</a>
+                    </div>
+
                 @else
 
                 <div class="col-md-8">

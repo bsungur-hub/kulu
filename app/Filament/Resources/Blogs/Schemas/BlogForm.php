@@ -38,6 +38,7 @@ class BlogForm
                         'strike',
                         'underline',
                         'undo',
+
                     ])
                     ->required()
                     ->columnSpanFull(),

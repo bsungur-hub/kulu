@@ -17,15 +17,23 @@
     </section>
     <!-- subheader close -->
 
+    <div class="container mt-4">
+        <span><a href="{{route('blog.index')}}" class="btn-custom"><i class="fa fa-arrow-left"></i>Blogs</a></span>
+    </div>
+
     <!-- content begin -->
     <div id="content">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
                     <div class="blog-read">
+
                         <div class="post-content">
+
                             <div class="text-center mb-4">
-                                <img src="{{ asset($blog_single->image) }}"  class="rounded" alt="" />
+                                <img src="{{ asset($blog_single->image) }}"  class="rounded" alt="{{
+                                $blog_single->title
+                                }}" />
                             </div>
 
                             <div class="date-box">
@@ -45,11 +53,17 @@
 
                             </div>
 
-                            <a href="#" class="btn-more">Read More</a>
+
+                        </div>
+
+                        <div class="col-md-12 text-center">
+
                         </div>
 
                         <div class="post-meta">
 
+                            <span> <i class="fa fa-arrow-left id-color "></i><a href="{{route('blog.index')}}"
+                                                       class="btn-custom">Blogs</a></span>
                             <span><i class="fa fa-user id-color"></i>By: <a href="#">Adem</a></span>
                             <span><i class="fa fa-tag id-color"></i><a href="#">News</a>, <a href="#">Events</a></span>
                         </div>

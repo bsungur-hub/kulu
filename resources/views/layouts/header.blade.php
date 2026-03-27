@@ -39,7 +39,7 @@
                             <nav class="md-flex">
                                 <ul id="mainmenu">
                                     <li><a href="/">HOME<span></span></a></li>
-                                    <li><a href="aboutus">About Us<span></span></a></li>
+                                    <li><a href="{{route('aboutus')}}">About Us<span></span></a></li>
                                     <li><a href="#">Systems</a>
                                         <ul>
                                             <li><a href="4500-system">4500 System</a></li>
@@ -57,7 +57,7 @@
                                     </li>
                                     <li><a href="certificate"><i class="fa-solid
                                     fa-certificate fa-sm"> Certificates</i></a></li>
-                                    <li><a href="blog">Blog</a></li>
+                                    <li><a href="{{route('blog.index')}}">Blog</a></li>
                                     <li><a href="contact">Contact</a></li>
                                 </ul>
                             </nav>

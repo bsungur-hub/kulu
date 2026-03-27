@@ -45,7 +45,7 @@
                                     </div>
 
                                     <div class="post-text">
-                                        <h1><a href="{{ route('blog.show' , $blog->slug) }}"> {{
+                                        <h1 class="mb-4"><a href="{{ route('blog.show' , $blog->slug) }}"> {{
                                         $blog->title }}</a></h1>
                                         <p>{{ $blog->excerpt }}</p>
                                     </div>
